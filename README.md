@@ -27,6 +27,8 @@ python -m urban_calibrator.cli serve --port 8846
 
 Open **http://127.0.0.1:8846**. Saved synthetic and real-data experiments are included, so the initial viewer needs no download. The interface supports before/after/reference views, 3D extrusions, point evidence, building inspection, pan/zoom, visibility links, and parameter-driven computation. Live reruns are temporary; download buttons explicitly refer to the saved standard experiments.
 
+The cartographic interface puts the map first, with a calibration desk on the right, a collapsible evidence register, and a draggable before/after comparison. Warm paper, terracotta geometry and serif type distinguish the atlas from a conventional KPI dashboard. See [interface references and interaction design](docs/interface-design.md).
+
 To compute the experiments yourself:
 
 ```powershell

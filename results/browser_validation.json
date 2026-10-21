@@ -1,15 +1,19 @@
 {
   "page_errors": [],
   "mobile_horizontal_overflow": false,
+  "interface": "cartographic atlas redesign",
   "checks": [
     "saved real experiment loaded",
     "before/after/reference controls",
+    "draggable comparison at 35% and 65%",
     "3D toggle",
     "visibility links",
     "live reduced-density computation",
     "synthetic dataset switch",
-    "mobile layout",
-    "reference stage and building click inspection verified separately"
+    "building click inspection",
+    "evidence drawer collapse/expand",
+    "zoom and fit",
+    "mobile layout"
   ],
   "video": "actual browser screenshots encoded at 8 fps; silent screen demonstration"
 }

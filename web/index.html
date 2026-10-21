@@ -1,34 +1,48 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CityAlign | LiDAR calibration lab</title><link rel="stylesheet" href="/assets/style.css"></head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f2ea"><title>CityAlign — Urban geometry atlas</title><link rel="stylesheet" href="/assets/style.css"></head>
 <body>
-<aside>
-  <a class="brand" href="/"> <span class="brand-icon">C<span>+</span></span><span>CityAlign<small>URBAN GEOMETRY LAB</small></span></a>
-  <div class="workspace"><span class="status-dot"></span> LOCAL RESEARCH WORKBENCH</div>
-  <label class="eyebrow" for="scenario">01 / DATA SOURCE</label>
-  <select id="scenario"><option value="autzen">Autzen · airborne LiDAR</option><option value="synthetic">Synthetic · known geometry</option></select>
-  <div class="source-card"><b id="sourceTitle">Eugene, Oregon</b><p id="sourceText">Classified airborne returns. Disjoint point split with controlled map corruption.</p><span id="sourceBadge">REAL LiDAR / PSEUDO-REFERENCE</span></div>
-  <p class="eyebrow">02 / CONTROLLED MAP ERRORS</p>
-  <label class="range-label" for="shift">Translation <output id="shiftValue">4 m</output></label><input id="shift" type="range" min="0" max="12" step="1" value="4">
-  <label class="range-label" for="yaw">Rotation <output id="yawValue">1°</output></label><input id="yaw" type="range" min="0" max="4" step=".5" value="1">
-  <label class="range-label" for="density">Evidence retained <output id="densityValue">100%</output></label><input id="density" type="range" min=".1" max="1" step=".1" value="1">
-  <p class="hint">Also injects +5 m height bias, omitted buildings and a ground-supported spurious footprint.</p>
-  <button id="run" class="primary">Run calibration <span>↗</span></button>
-  <div id="runStatus" class="run-status" role="status">Loading saved experiment…</div>
-  <div class="sidebar-bottom"><span class="eyebrow">GEOMETRY EXPORTS</span><div id="exports" class="export-links"></div><p>LoD1 · metres · local coordinates<br>Visibility is a geometric proxy for RF.</p></div>
-</aside>
-<main>
-  <header><div><span class="eyebrow">POINT CLOUD → MAP EVIDENCE → CALIBRATION</span><h1>Make the map match the city.</h1><p>A measured view of alignment, building heights and missing geometry.</p></div><div class="live-pill"><span class="status-dot"></span> Interactive experiment</div></header>
-  <section class="metrics" aria-label="Measured results">
-    <article><span>HEIGHT MAE</span><div><strong id="heightAfter">—</strong><small>m</small><em id="heightBefore">—</em></div><p>Matched buildings against reference</p></article>
-    <article><span>FOOTPRINT OVERLAP</span><div><strong id="iouAfter">—</strong><em id="iouBefore">—</em></div><p>Mean IoU · one-to-one matches</p></article>
-    <article><span>BUILDING RECALL</span><div><strong id="recallAfter">—</strong><em id="recallBefore">—</em></div><p>Includes proposed missing footprints</p></article>
-    <article><span>CALIBRATION TIME</span><div><strong id="runtime">—</strong><small>s</small></div><p id="pointsCount">— evidence points</p></article>
+<header class="masthead">
+ <a class="brand" href="/" aria-label="CityAlign home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 22 16 29 29 22M3 16 16 23 29 16M3 10 16 3 29 10 16 17Z"/></svg><span>CityAlign<span class="brand-period">.</span></span></a>
+ <span class="mast-divider"></span><span class="mast-caption">URBAN GEOMETRY ATLAS <small>Research edition / 01</small></span>
+ <div class="mast-right"><span class="local-status"><i></i> Local workspace</span><a href="https://github.com/Pavan-amikula/cityalign-lidar-map-calibration" target="_blank" rel="noreferrer">Project & methods <span>↗</span></a></div>
+</header>
+<main class="workbench">
+ <section class="map-workspace" aria-label="Map workspace">
+  <div class="map-topline"><div class="stage-tabs" role="group" aria-label="Map stage"><button data-stage="before">01 <span>Original</span></button><button data-stage="after" class="active">02 <span>Calibrated</span></button><button data-stage="reference">03 <span>Reference</span></button></div><button id="compareToggle" class="compare-button" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v16M6 6l-4 4 4 4m8-8 4 4-4 4"/></svg>Compare maps</button></div>
+  <div class="canvas-wrap">
+   <canvas id="map" aria-label="Interactive city map and LiDAR evidence"></canvas>
+   <div class="map-heading"><span class="eyebrow">FIELD STUDY <span id="studyNumber">001 / OREGON</span></span><h1 id="mapTitle">An urban map,<br><em>reconsidered.</em></h1><p id="mapSubtitle">Autzen district · Eugene, Oregon</p><span id="sourceBadge" class="source-badge">REAL LiDAR / PSEUDO-REFERENCE</span></div>
+   <div class="map-label"><i></i><span id="mapLabel">CALIBRATED GEOMETRY</span></div>
+   <div class="map-tools" aria-label="Map navigation"><button id="zoomIn" aria-label="Zoom in" title="Zoom in">+</button><button id="zoomOut" aria-label="Zoom out" title="Zoom out">−</button><span></span><button id="reset" aria-label="Fit map" title="Fit map"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m6 0h4v-4"/></svg></button><button id="viewToggle" title="Switch between top and 3D view">3D view</button></div>
+   <div class="north"><svg viewBox="0 0 44 60" aria-hidden="true"><text x="22" y="12" text-anchor="middle">N</text><path d="M22 22 12 48l10-7 10 7Z"/><path d="M22 22v19"/></svg></div>
+   <div id="comparisonOverlay" class="comparison-overlay" hidden><span class="split-before">ORIGINAL</span><span class="split-after">CALIBRATED</span><div id="splitLine" class="split-line"><span>↔</span></div><input id="comparisonRange" type="range" min="10" max="90" value="50" aria-label="Before and after comparison divider"></div>
+   <div id="selection" class="selection" hidden></div>
+   <div class="map-legend"><span><i class="swatch calibrated"></i>Calibrated</span><span><i class="swatch candidate"></i>Proposed</span><span><i class="swatch review"></i>Review</span><span class="legend-divider"></span><label><input id="cloudToggle" type="checkbox" checked>Point cloud</label><label><input id="losToggle" type="checkbox">Visibility</label></div>
+   <div class="canvas-tip">Drag to pan · scroll to zoom · select a building</div>
+  </div>
+  <section class="evidence-drawer" id="evidenceDrawer">
+   <div class="drawer-head"><div><span class="eyebrow">THE CHANGE REGISTER</span><h2>Every correction has a reason.</h2></div><div class="drawer-actions"><span id="changeCount">— decisions</span><button id="drawerToggle" aria-expanded="true" aria-controls="evidenceBody">Collapse <span>⌄</span></button></div></div>
+   <div class="evidence-body" id="evidenceBody"><div class="table-wrap"><table><thead><tr><th>OBJECT</th><th>EVIDENCE-BASED DECISION</th><th>HEIGHT CHANGE</th><th>RETURNS</th></tr></thead><tbody id="changes"></tbody></table></div><div class="visibility-summary"><span class="eyebrow">GEOMETRY → VISIBILITY</span><p>Disagreement on 144 fixed links</p><div class="los-comparison"><div><small>Original</small><strong id="losBefore">—</strong></div><span>→</span><div><small>Calibrated</small><strong id="losAfter">—</strong></div></div><span class="micro-note">A line-of-sight diagnostic. No RF power prediction.</span></div></div>
   </section>
-  <section class="viewer-panel">
-    <div class="viewer-toolbar"><div class="segmented" role="group" aria-label="Map stage"><button data-stage="before">Original map</button><button data-stage="after" class="active">Calibrated</button><button data-stage="reference">Reference</button></div><div class="view-options"><label><input id="cloudToggle" type="checkbox" checked> LiDAR</label><label><input id="losToggle" type="checkbox"> LoS links</label><button id="viewToggle">3D view</button><button id="reset">Reset view</button></div></div>
-    <div class="canvas-wrap"><canvas id="map" aria-label="Interactive city map and LiDAR evidence"></canvas><div class="map-label"><span class="status-dot"></span><span id="mapLabel">CALIBRATED GEOMETRY</span></div><div class="canvas-tip">Drag to pan · scroll to zoom · click a building to inspect</div><div class="north">N ↑</div><div id="selection" class="selection" hidden></div></div>
-    <div class="legend"><span><i style="background:#36d5b4"></i>Calibrated</span><span><i style="background:#a9abff"></i>Missing candidate</span><span><i style="background:#f1b364"></i>Original / review</span><span><i style="background:#68778b"></i>LiDAR returns</span><span id="buildingCount" class="legend-right">—</span></div>
+ </section>
+ <aside class="inspector" aria-label="Calibration inspector">
+  <div class="inspector-heading"><span class="eyebrow">EXPERIMENT / 01</span><h2>Calibration desk</h2><span class="edition-mark">C / A</span></div>
+  <section class="inspector-section source-section"><label class="field-label" for="scenario">Observation source</label><div class="select-wrap"><select id="scenario"><option value="autzen">Autzen · airborne LiDAR</option><option value="synthetic">Synthetic · known geometry</option></select><span>⌄</span></div><div class="source-description"><i class="source-icon">◈</i><div><b id="sourceTitle">Eugene, Oregon</b><p id="sourceText">Classified airborne returns. Disjoint point split with controlled map corruption.</p></div></div></section>
+  <section class="inspector-section controls-section"><div class="section-caption"><span class="eyebrow">01 / DISTURB THE MAP</span><span class="micro-note">Controlled errors</span></div>
+   <label class="range-label" for="shift">Translation <output id="shiftValue">4 m</output></label><input id="shift" type="range" min="0" max="12" step="1" value="4"><div class="range-ends"><span>0 m</span><span>12 m</span></div>
+   <label class="range-label" for="yaw">Rotation <output id="yawValue">1°</output></label><input id="yaw" type="range" min="0" max="4" step=".5" value="1"><div class="range-ends"><span>0°</span><span>4°</span></div>
+   <label class="range-label" for="density">Evidence retained <output id="densityValue">100%</output></label><input id="density" type="range" min=".1" max="1" step=".1" value="1"><div class="range-ends"><span>10%</span><span>100%</span></div>
+   <p class="hint">With +5 m height bias, omitted buildings and a spurious footprint.</p><button id="run" class="run-button"><span>Calibrate geometry</span><span class="run-arrow">↗</span></button><p id="runStatus" class="run-status" role="status">Loading saved experiment…</p>
   </section>
-  <section class="lower"><article class="audit"><div class="section-title"><h2>Evidence ledger</h2><span id="changeCount">— changes</span></div><div class="table-wrap"><table><thead><tr><th>BUILDING</th><th>DECISION</th><th>HEIGHT Δ</th><th>SUPPORT</th></tr></thead><tbody id="changes"></tbody></table></div></article><article class="insights"><div class="section-title"><h2>What changed downstream?</h2></div><p class="muted">Binary line-of-sight disagreement on 144 fixed links, measured against the reference.</p><div class="los-comparison"><div><span>Original</span><strong id="losBefore">—</strong></div><span>→</span><div><span>Calibrated</span><strong id="losAfter">—</strong></div></div><div class="note"><b>Know what the result means.</b><p id="caveat">Real LiDAR uses a derived reference and injected map errors. This is a recovery experiment, not independent survey validation.</p><p>Bridges and overhangs need review. Streets are not reconstructed. No RF power, diffraction or material inference.</p></div><a href="https://github.com/PDAL/data/tree/main/autzen" target="_blank" rel="noreferrer">Dataset provenance ↗</a></article></section>
-  <footer>CityAlign / Reproducible geometric baseline <span>SE(2) registration · classified point clouds · LoD1 meshes</span></footer>
-</main><script src="/assets/app.js"></script></body></html>
+  <section class="inspector-section results-section"><div class="section-caption"><span class="eyebrow">02 / READ THE RESULT</span><span class="result-dot"></span></div><div class="column-heads"><span>Measured against reference</span><span>Before → After</span></div>
+   <div class="result-row featured"><div><span>Height error</span><small>Matched-object MAE</small></div><div class="result-value"><del id="heightBefore">—</del><span class="tiny-arrow">→</span><strong id="heightAfter">—</strong><small>m</small></div></div>
+   <div class="result-row"><div><span>Footprint overlap</span><small>Mean IoU</small></div><div class="result-value"><del id="iouBefore">—</del><span class="tiny-arrow">→</span><strong id="iouAfter">—</strong></div></div>
+   <div class="result-row"><div><span>Building recall</span><small>IoU ≥ 0.2 · proposals included</small></div><div class="result-value"><del id="recallBefore">—</del><span class="tiny-arrow">→</span><strong id="recallAfter">—</strong></div></div>
+   <div class="runtime-row"><span><b id="runtime">—</b> s <small>calibration</small></span><span id="pointsCount">— points</span></div>
+  </section>
+  <details class="method-note"><summary>Read the experiment correctly <span>+</span></summary><p id="caveat">Real LiDAR uses a derived reference and injected map errors. This is a recovery experiment, not independent survey validation.</p><p>Complex structures require review. Streets are not reconstructed.</p><a href="https://github.com/PDAL/data/tree/main/autzen" target="_blank" rel="noreferrer">Dataset & attribution ↗</a></details>
+  <section class="export-section" id="exportSection"><span class="eyebrow">TAKE THE GEOMETRY WITH YOU</span><div id="exports" class="export-links"></div><span class="micro-note">Saved standard run · LoD1 · metres</span></section>
+ </aside>
+</main>
+<footer class="statusbar"><span><i></i> <span id="buildingCount">— buildings</span></span><span id="cursorCoords">LOCAL METRIC SPACE / X — Y —</span><span>SE(2) registration <span class="footer-dot">·</span> Classified LiDAR <span class="footer-dot">·</span> LoD1 geometry</span></footer>
+<script src="/assets/app.js"></script></body></html>
