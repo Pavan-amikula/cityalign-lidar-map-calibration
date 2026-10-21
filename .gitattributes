@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.ply binary
+*.glb binary
+*.usdc binary
+*.png binary
+*.gif binary
+*.mp4 binary

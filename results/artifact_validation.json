@@ -1,0 +1,18 @@
+[
+  {
+    "scenario": "synthetic",
+    "glb": "loaded; metric axis bounds verified",
+    "usdc": "opened with OpenUSD; binary magic, units, up-axis verified",
+    "mesh": "watertight with consistent winding after vertex merging",
+    "vertices": 576,
+    "mitsuba": "loaded XML and PLY using scalar_rgb; 1 shape"
+  },
+  {
+    "scenario": "autzen",
+    "glb": "loaded; metric axis bounds verified",
+    "usdc": "opened with OpenUSD; binary magic, units, up-axis verified",
+    "mesh": "watertight with consistent winding after vertex merging",
+    "vertices": 20808,
+    "mitsuba": "loaded XML and PLY using scalar_rgb; 1 shape"
+  }
+]

@@ -1,0 +1,331 @@
+{
+  "elapsed_s": 1.5212,
+  "rotation_deg": -1.0060840683995809,
+  "translation_m": [
+    -4.171890029662847,
+    2.882572698832162
+  ],
+  "icp_rmse_history_m": [
+    6.032648386278327,
+    5.343207828727946,
+    4.766403521094988,
+    4.309306887259778,
+    3.863260472714521,
+    3.43371569818073,
+    3.0660498934044376,
+    2.769252374810992,
+    2.5229852599415055,
+    2.329012359723104,
+    2.1529222283358838,
+    1.969645829962044,
+    1.7963582303106258,
+    1.6274489169070496,
+    1.458109128827228,
+    1.3032735519534264,
+    1.1562187034720475,
+    1.0641665033998653,
+    0.9726730646034699,
+    0.8736213834701579,
+    0.7747293938537789,
+    0.7261078533243206,
+    0.695719012526413,
+    0.6740934050592924,
+    0.6543695325558144,
+    0.6306645100093154,
+    0.6111629195385813,
+    0.5666258470258825,
+    0.34010495182407596,
+    0.25229354072680166,
+    0.24788945456485226,
+    0.24759272135067886,
+    0.24757362294470142,
+    0.2475710070052924,
+    0.2475703348455769
+  ],
+  "changes": [
+    {
+      "id": "lidar-001",
+      "action": "height-calibrated",
+      "delta_height_m": -4.263,
+      "iou": 0.981,
+      "support": 7241
+    },
+    {
+      "id": "lidar-002",
+      "action": "height-calibrated",
+      "delta_height_m": -2.984,
+      "iou": 0.969,
+      "support": 5610
+    },
+    {
+      "id": "lidar-003",
+      "action": "height-calibrated",
+      "delta_height_m": -4.949,
+      "iou": 0.976,
+      "support": 146
+    },
+    {
+      "id": "lidar-004",
+      "action": "height-calibrated",
+      "delta_height_m": -4.205,
+      "iou": 0.987,
+      "support": 42457
+    },
+    {
+      "id": "lidar-005",
+      "action": "height-calibrated",
+      "delta_height_m": -4.036,
+      "iou": 0.964,
+      "support": 3999
+    },
+    {
+      "id": "lidar-007",
+      "action": "height-calibrated",
+      "delta_height_m": -5.595,
+      "iou": 0.97,
+      "support": 15820
+    },
+    {
+      "id": "lidar-008",
+      "action": "height-calibrated",
+      "delta_height_m": -4.113,
+      "iou": 0.86,
+      "support": 121
+    },
+    {
+      "id": "lidar-009",
+      "action": "height-calibrated",
+      "delta_height_m": -5.328,
+      "iou": 0.938,
+      "support": 3142
+    },
+    {
+      "id": "lidar-010",
+      "action": "height-calibrated",
+      "delta_height_m": -4.865,
+      "iou": 0.933,
+      "support": 1198
+    },
+    {
+      "id": "lidar-011",
+      "action": "height-calibrated",
+      "delta_height_m": -6.398,
+      "iou": 0.955,
+      "support": 3278
+    },
+    {
+      "id": "lidar-013",
+      "action": "height-calibrated",
+      "delta_height_m": -5.856,
+      "iou": 0.886,
+      "support": 759
+    },
+    {
+      "id": "lidar-014",
+      "action": "height-calibrated",
+      "delta_height_m": -4.181,
+      "iou": 0.865,
+      "support": 91
+    },
+    {
+      "id": "lidar-015",
+      "action": "height-calibrated",
+      "delta_height_m": -4.975,
+      "iou": 0.818,
+      "support": 157
+    },
+    {
+      "id": "lidar-016",
+      "action": "height-calibrated",
+      "delta_height_m": -4.037,
+      "iou": 0.982,
+      "support": 30132
+    },
+    {
+      "id": "lidar-017",
+      "action": "height-calibrated",
+      "delta_height_m": -4.799,
+      "iou": 0.88,
+      "support": 114
+    },
+    {
+      "id": "lidar-019",
+      "action": "height-calibrated",
+      "delta_height_m": -4.826,
+      "iou": 0.944,
+      "support": 1221
+    },
+    {
+      "id": "lidar-022",
+      "action": "height-calibrated",
+      "delta_height_m": -4.864,
+      "iou": 0.491,
+      "support": 4083
+    },
+    {
+      "id": "lidar-023",
+      "action": "height-calibrated",
+      "delta_height_m": -4.212,
+      "iou": 0.698,
+      "support": 82
+    },
+    {
+      "id": "lidar-025",
+      "action": "height-calibrated",
+      "delta_height_m": -4.557,
+      "iou": 0.976,
+      "support": 3332
+    },
+    {
+      "id": "lidar-026",
+      "action": "height-calibrated",
+      "delta_height_m": -6.173,
+      "iou": 0.974,
+      "support": 2596
+    },
+    {
+      "id": "lidar-027",
+      "action": "height-calibrated",
+      "delta_height_m": -3.633,
+      "iou": 0.93,
+      "support": 986
+    },
+    {
+      "id": "lidar-028",
+      "action": "height-calibrated",
+      "delta_height_m": -4.832,
+      "iou": 0.951,
+      "support": 447
+    },
+    {
+      "id": "lidar-020",
+      "action": "review-insufficient-evidence",
+      "ground_returns": 31,
+      "building_returns": 1466
+    },
+    {
+      "id": "lidar-021",
+      "action": "review-insufficient-evidence",
+      "ground_returns": 4,
+      "building_returns": 111
+    },
+    {
+      "id": "injected-spurious",
+      "action": "unsupported-with-ground-evidence",
+      "ground_returns": 87,
+      "building_returns": 0
+    },
+    {
+      "id": "candidate-lidar-000",
+      "action": "missing-building-candidate",
+      "support": 5123
+    },
+    {
+      "id": "candidate-lidar-006",
+      "action": "missing-building-candidate",
+      "support": 18605
+    },
+    {
+      "id": "candidate-lidar-012",
+      "action": "missing-building-candidate",
+      "support": 3388
+    },
+    {
+      "id": "candidate-lidar-018",
+      "action": "missing-building-candidate",
+      "support": 891
+    },
+    {
+      "id": "candidate-lidar-022",
+      "action": "missing-building-candidate",
+      "support": 136
+    }
+  ],
+  "input_points": 455838,
+  "observed_buildings": 27,
+  "matched_buildings": 22,
+  "model": "SE(2) + robust roof-height estimation; LoD1 extrusions",
+  "scenario": "autzen",
+  "seed": 7,
+  "alignment": true,
+  "before": {
+    "matched": 11,
+    "precision": 0.44,
+    "recall": 0.3793103448275862,
+    "mean_iou": 0.41780031967545084,
+    "height_mae_m": 4.760414750821086,
+    "height_rmse_m": 4.828469789841669
+  },
+  "after": {
+    "matched": 29,
+    "precision": 1.0,
+    "recall": 1.0,
+    "mean_iou": 0.969441427174437,
+    "height_mae_m": 0.43291965329683646,
+    "height_rmse_m": 1.3918623651664122
+  },
+  "provenance": {
+    "source": "https://media.githubusercontent.com/media/PDAL/data/main/autzen/autzen-classified.laz",
+    "sha256": "c8828215facfb4c9465c9a7db9d45cf2c0e9175a6eb5b21e89417978cc85cd51",
+    "source_crs_wkt": "COMPOUNDCRS[\"NAD83 / Oregon GIC Lambert (ft) + NAVD88 height (ftUS)\",PROJCRS[\"NAD83 / Oregon GIC Lambert (ft)\",BASEGEOGCRS[\"NAD83\",DATUM[\"North American Datum 1983\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4269]],CONVERSION[\"unnamed\",METHOD[\"Lambert Conic Conformal (2SP)\",ID[\"EPSG\",9802]],PARAMETER[\"Latitude of false origin\",41.75,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8821]],PARAMETER[\"Longitude of false origin\",-120.5,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8822]],PARAMETER[\"Latitude of 1st standard parallel\",43,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Latitude of 2nd standard parallel\",45.5,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8824]],PARAMETER[\"Easting at false origin\",1312335.958,LENGTHUNIT[\"foot\",0.3048],ID[\"EPSG\",8826]],PARAMETER[\"Northing at false origin\",0,LENGTHUNIT[\"foot\",0.3048],ID[\"EPSG\",8827]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"foot\",0.3048]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"foot\",0.3048]],ID[\"EPSG\",2992]],VERTCRS[\"NAVD88 height (ftUS)\",VDATUM[\"North American Vertical Datum 1988\"],CS[vertical,1],AXIS[\"gravity-related height\",up,LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",6360]]]",
+    "axis_to_m": [
+      0.3048,
+      0.3048,
+      0.30480060960121924
+    ],
+    "origin_source_m": [
+      193724.11039200003,
+      258739.27932000003,
+      123.79171958343917
+    ],
+    "crop_local_m": [
+      80,
+      650,
+      980,
+      1410
+    ],
+    "sampling": "all building/complex returns; every eighth other return",
+    "license": "CC BY 4.0",
+    "attribution": "Watershed Sciences / Aaron Reyna (2010); Hobu / Max Sampson classifications (2021); PDAL/data",
+    "reference": "LiDAR-derived pseudo-reference, disjoint random point split; shared classification and acquisition",
+    "independent_truth": false,
+    "split_seed": 7,
+    "injected_errors": {
+      "yaw_deg": 1.0,
+      "translation_m": [
+        4.0,
+        -2.8
+      ],
+      "height_bias_m": 5.0,
+      "omitted_every_nth_building": 6,
+      "spurious_buildings": 1,
+      "retained_density": 1.0
+    }
+  },
+  "paired_existing_height": {
+    "count": 24,
+    "before_mae_m": 4.760589803624072,
+    "after_mae_m": 0.5102524720161244,
+    "definition": "Same retained original object IDs in both stages; injected-corruption truth is used only for evaluation"
+  },
+  "visibility_proxy": {
+    "links": 144,
+    "before_disagreement": 0.1597222222222222,
+    "after_disagreement": 0.034722222222222224,
+    "description": "Binary LoS to a pseudo-reference for real data; no diffraction, reflection, material or RF power prediction"
+  },
+  "complex_structure_review": {
+    "class_counts": {
+      "17": 625,
+      "19": 1654
+    },
+    "action": "review-only; LoD1 cannot represent bridges, overhangs, or vertical openings"
+  },
+  "end_to_end_s": 3.8054,
+  "exports": {
+    "geojson": "written; local metric coordinates, not RFC7946 lon/lat",
+    "glb": "written; Y up, metres",
+    "mitsuba_xml": "written; Z up; diffuse optical material; validate with Mitsuba optional dependency",
+    "usdc": "written; binary USD crate, Z up, metres"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "elapsed_s": 0.2722,
+  "rotation_deg": -0.7775767445364296,
+  "translation_m": [
+    -3.2474981447173317,
+    2.0041682466655426
+  ],
+  "icp_rmse_history_m": [
+    1.2755295729274165,
+    1.0437925315527252,
+    0.8876217985969588,
+    0.7667673340932658,
+    0.6652722703971182,
+    0.6343403796327095,
+    0.6303489604335424,
+    0.6301027241897807,
+    0.6300757234132444,
+    0.630065511986772
+  ],
+  "changes": [
+    {
+      "id": "b-0-1",
+      "action": "height-calibrated",
+      "delta_height_m": -6.607,
+      "iou": 0.878,
+      "support": 1645
+    },
+    {
+      "id": "b-0-2",
+      "action": "height-calibrated",
+      "delta_height_m": -6.031,
+      "iou": 0.885,
+      "support": 1316
+    },
+    {
+      "id": "b-0-3",
+      "action": "height-calibrated",
+      "delta_height_m": -5.083,
+      "iou": 0.933,
+      "support": 1400
+    },
+    {
+      "id": "b-1-0",
+      "action": "height-calibrated",
+      "delta_height_m": -5.224,
+      "iou": 0.869,
+      "support": 1419
+    },
+    {
+      "id": "b-1-1",
+      "action": "height-calibrated",
+      "delta_height_m": -5.223,
+      "iou": 0.911,
+      "support": 1209
+    },
+    {
+      "id": "b-1-3",
+      "action": "height-calibrated",
+      "delta_height_m": -5.033,
+      "iou": 0.908,
+      "support": 2352
+    },
+    {
+      "id": "b-2-0",
+      "action": "height-calibrated",
+      "delta_height_m": -3.292,
+      "iou": 0.922,
+      "support": 1050
+    },
+    {
+      "id": "b-2-1",
+      "action": "height-calibrated",
+      "delta_height_m": -4.34,
+      "iou": 0.9,
+      "support": 1485
+    },
+    {
+      "id": "b-2-2",
+      "action": "height-calibrated",
+      "delta_height_m": -3.456,
+      "iou": 0.923,
+      "support": 1599
+    },
+    {
+      "id": "b-2-3",
+      "action": "height-calibrated",
+      "delta_height_m": -5.001,
+      "iou": 0.952,
+      "support": 1519
+    },
+    {
+      "id": "b-3-1",
+      "action": "height-calibrated",
+      "delta_height_m": -5.505,
+      "iou": 0.921,
+      "support": 1485
+    },
+    {
+      "id": "b-3-2",
+      "action": "height-calibrated",
+      "delta_height_m": -5.558,
+      "iou": 0.873,
+      "support": 868
+    },
+    {
+      "id": "b-3-3",
+      "action": "height-calibrated",
+      "delta_height_m": -3.953,
+      "iou": 0.938,
+      "support": 1470
+    },
+    {
+      "id": "injected-spurious",
+      "action": "unsupported-with-ground-evidence",
+      "ground_returns": 20,
+      "building_returns": 0
+    },
+    {
+      "id": "candidate-lidar-002",
+      "action": "missing-building-candidate",
+      "support": 1518
+    },
+    {
+      "id": "candidate-lidar-005",
+      "action": "missing-building-candidate",
+      "support": 1036
+    },
+    {
+      "id": "candidate-lidar-012",
+      "action": "missing-building-candidate",
+      "support": 1804
+    }
+  ],
+  "input_points": 52832,
+  "observed_buildings": 16,
+  "matched_buildings": 13,
+  "model": "SE(2) + robust roof-height estimation; LoD1 extrusions",
+  "scenario": "synthetic",
+  "seed": 7,
+  "alignment": true,
+  "before": {
+    "matched": 13,
+    "precision": 0.9285714285714286,
+    "recall": 0.8125,
+    "mean_iou": 0.804629812583229,
+    "height_mae_m": 5.007256978917223,
+    "height_rmse_m": 5.0918049473302265
+  },
+  "after": {
+    "matched": 16,
+    "precision": 1.0,
+    "recall": 1.0,
+    "mean_iou": 0.9387815348663697,
+    "height_mae_m": 0.06053763626524433,
+    "height_rmse_m": 0.06068468426389328
+  },
+  "provenance": {
+    "source": "seeded synthetic flat-roof city",
+    "seed": 7,
+    "independent_truth": true,
+    "injected_errors": {
+      "yaw_deg": 1.0,
+      "translation_m": [
+        4.0,
+        -2.8
+      ],
+      "height_bias_m": 5.0,
+      "omitted_every_nth_building": 6,
+      "spurious_buildings": 1,
+      "retained_density": 1.0
+    }
+  },
+  "paired_existing_height": {
+    "count": 13,
+    "before_mae_m": 5.007256978917223,
+    "after_mae_m": 0.060678243759589086,
+    "definition": "Same retained original object IDs in both stages; injected-corruption truth is used only for evaluation"
+  },
+  "visibility_proxy": {
+    "links": 144,
+    "before_disagreement": 0.16666666666666666,
+    "after_disagreement": 0.027777777777777776,
+    "description": "Binary LoS to a pseudo-reference for real data; no diffraction, reflection, material or RF power prediction"
+  },
+  "complex_structure_review": {
+    "class_counts": {},
+    "action": "review-only; LoD1 cannot represent bridges, overhangs, or vertical openings"
+  },
+  "end_to_end_s": 0.3334,
+  "exports": {
+    "geojson": "written; local metric coordinates, not RFC7946 lon/lat",
+    "glb": "written; Y up, metres",
+    "mitsuba_xml": "written; Z up; diffuse optical material; validate with Mitsuba optional dependency",
+    "usdc": "written; binary USD crate, Z up, metres"
+  }
+}

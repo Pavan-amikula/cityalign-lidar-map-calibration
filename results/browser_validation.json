@@ -1,0 +1,15 @@
+{
+  "page_errors": [],
+  "mobile_horizontal_overflow": false,
+  "checks": [
+    "saved real experiment loaded",
+    "before/after/reference controls",
+    "3D toggle",
+    "visibility links",
+    "live reduced-density computation",
+    "synthetic dataset switch",
+    "mobile layout",
+    "reference stage and building click inspection verified separately"
+  ],
+  "video": "actual browser screenshots encoded at 8 fps; silent screen demonstration"
+}

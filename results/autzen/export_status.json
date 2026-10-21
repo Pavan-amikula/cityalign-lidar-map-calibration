@@ -1,0 +1,6 @@
+{
+  "geojson": "written; local metric coordinates, not RFC7946 lon/lat",
+  "glb": "written; Y up, metres",
+  "mitsuba_xml": "written; Z up; diffuse optical material; validate with Mitsuba optional dependency",
+  "usdc": "written; binary USD crate, Z up, metres"
+}

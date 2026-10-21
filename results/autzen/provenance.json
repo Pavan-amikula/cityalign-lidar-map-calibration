@@ -1,0 +1,38 @@
+{
+  "source": "https://media.githubusercontent.com/media/PDAL/data/main/autzen/autzen-classified.laz",
+  "sha256": "c8828215facfb4c9465c9a7db9d45cf2c0e9175a6eb5b21e89417978cc85cd51",
+  "source_crs_wkt": "COMPOUNDCRS[\"NAD83 / Oregon GIC Lambert (ft) + NAVD88 height (ftUS)\",PROJCRS[\"NAD83 / Oregon GIC Lambert (ft)\",BASEGEOGCRS[\"NAD83\",DATUM[\"North American Datum 1983\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4269]],CONVERSION[\"unnamed\",METHOD[\"Lambert Conic Conformal (2SP)\",ID[\"EPSG\",9802]],PARAMETER[\"Latitude of false origin\",41.75,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8821]],PARAMETER[\"Longitude of false origin\",-120.5,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8822]],PARAMETER[\"Latitude of 1st standard parallel\",43,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Latitude of 2nd standard parallel\",45.5,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8824]],PARAMETER[\"Easting at false origin\",1312335.958,LENGTHUNIT[\"foot\",0.3048],ID[\"EPSG\",8826]],PARAMETER[\"Northing at false origin\",0,LENGTHUNIT[\"foot\",0.3048],ID[\"EPSG\",8827]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"foot\",0.3048]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"foot\",0.3048]],ID[\"EPSG\",2992]],VERTCRS[\"NAVD88 height (ftUS)\",VDATUM[\"North American Vertical Datum 1988\"],CS[vertical,1],AXIS[\"gravity-related height\",up,LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",6360]]]",
+  "axis_to_m": [
+    0.3048,
+    0.3048,
+    0.30480060960121924
+  ],
+  "origin_source_m": [
+    193724.11039200003,
+    258739.27932000003,
+    123.79171958343917
+  ],
+  "crop_local_m": [
+    80,
+    650,
+    980,
+    1410
+  ],
+  "sampling": "all building/complex returns; every eighth other return",
+  "license": "CC BY 4.0",
+  "attribution": "Watershed Sciences / Aaron Reyna (2010); Hobu / Max Sampson classifications (2021); PDAL/data",
+  "reference": "LiDAR-derived pseudo-reference, disjoint random point split; shared classification and acquisition",
+  "independent_truth": false,
+  "split_seed": 7,
+  "injected_errors": {
+    "yaw_deg": 1.0,
+    "translation_m": [
+      4.0,
+      -2.8
+    ],
+    "height_bias_m": 5.0,
+    "omitted_every_nth_building": 6,
+    "spurious_buildings": 1,
+    "retained_density": 1.0
+  }
+}

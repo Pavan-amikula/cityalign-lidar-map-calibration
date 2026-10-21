@@ -1,0 +1,16 @@
+{
+  "source": "seeded synthetic flat-roof city",
+  "seed": 7,
+  "independent_truth": true,
+  "injected_errors": {
+    "yaw_deg": 1.0,
+    "translation_m": [
+      4.0,
+      -2.8
+    ],
+    "height_bias_m": 5.0,
+    "omitted_every_nth_building": 6,
+    "spurious_buildings": 1,
+    "retained_density": 1.0
+  }
+}

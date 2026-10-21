@@ -1,0 +1,251 @@
+[
+  {
+    "elapsed_s": 0.2777,
+    "input_points": 52832,
+    "tile_size_m": 300.0,
+    "halo_m": 80.0,
+    "buildings": 16,
+    "tiles": [
+      {
+        "tile": [
+          0,
+          0
+        ],
+        "points": 52832,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      }
+    ],
+    "limitations": "In-memory point arrays; bounded per-tile rasters; centroid ownership; structures exceeding halo skipped, not reconstructed",
+    "fixture": "repeated synthetic blocks, not independent real geography",
+    "expected_buildings": 16,
+    "area_envelope_km2": 0.09
+  },
+  {
+    "elapsed_s": 1.5353,
+    "input_points": 211328,
+    "tile_size_m": 300.0,
+    "halo_m": 80.0,
+    "buildings": 64,
+    "tiles": [
+      {
+        "tile": [
+          0,
+          0
+        ],
+        "points": 88719,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          0,
+          1
+        ],
+        "points": 75528,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          1,
+          0
+        ],
+        "points": 75329,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          1,
+          1
+        ],
+        "points": 64257,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      }
+    ],
+    "limitations": "In-memory point arrays; bounded per-tile rasters; centroid ownership; structures exceeding halo skipped, not reconstructed",
+    "fixture": "repeated synthetic blocks, not independent real geography",
+    "expected_buildings": 64,
+    "area_envelope_km2": 0.36
+  },
+  {
+    "elapsed_s": 7.6649,
+    "input_points": 845312,
+    "tile_size_m": 300.0,
+    "halo_m": 80.0,
+    "buildings": 256,
+    "tiles": [
+      {
+        "tile": [
+          0,
+          0
+        ],
+        "points": 88719,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          0,
+          1
+        ],
+        "points": 95776,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          0,
+          2
+        ],
+        "points": 95776,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          0,
+          3
+        ],
+        "points": 75528,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          1,
+          0
+        ],
+        "points": 95551,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          1,
+          1
+        ],
+        "points": 103392,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          1,
+          2
+        ],
+        "points": 103392,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          1,
+          3
+        ],
+        "points": 81520,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          2,
+          0
+        ],
+        "points": 95551,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          2,
+          1
+        ],
+        "points": 103392,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          2,
+          2
+        ],
+        "points": 103392,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          2,
+          3
+        ],
+        "points": 81520,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          3,
+          0
+        ],
+        "points": 75329,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          3,
+          1
+        ],
+        "points": 81546,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          3,
+          2
+        ],
+        "points": 81546,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      },
+      {
+        "tile": [
+          3,
+          3
+        ],
+        "points": 64257,
+        "accepted": 16,
+        "skipped_boundary": 0,
+        "status": "complete"
+      }
+    ],
+    "limitations": "In-memory point arrays; bounded per-tile rasters; centroid ownership; structures exceeding halo skipped, not reconstructed",
+    "fixture": "repeated synthetic blocks, not independent real geography",
+    "expected_buildings": 256,
+    "area_envelope_km2": 1.44
+  }
+]
