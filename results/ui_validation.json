@@ -1,0 +1,16 @@
+{
+  "page_errors": [],
+  "external_asset_requests": [],
+  "mobile_horizontal_overflow": false,
+  "checks": [
+    "WebGL initialized",
+    "locally vendored assets; no external asset requests",
+    "decision filtering",
+    "table-linked 3D focus and properties",
+    "geometry edge/grid toggles",
+    "2D/3D switching",
+    "mobile layout",
+    "WebGL-unavailable fallback"
+  ],
+  "manual_check": "A real Autzen building was selected in the visible WebGL viewport via raycasting; height/base/support properties appeared."
+}

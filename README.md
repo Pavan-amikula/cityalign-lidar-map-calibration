@@ -27,7 +27,7 @@ python -m urban_calibrator.cli serve --port 8846
 
 Open **http://127.0.0.1:8846**. Saved synthetic and real-data experiments are included, so the initial viewer needs no download. The interface supports before/after/reference views, 3D extrusions, point evidence, building inspection, pan/zoom, visibility links, and parameter-driven computation. Live reruns are temporary; download buttons explicitly refer to the saved standard experiments.
 
-The cartographic interface puts the map first, with a calibration desk on the right, a collapsible evidence register, and a draggable before/after comparison. Warm paper, terracotta geometry and serif type distinguish the atlas from a conventional KPI dashboard. See [interface references and interaction design](docs/interface-design.md).
+The professional point-cloud workspace uses a project explorer, an orbitable **Three.js WebGL scene**, a calibration/properties panel, and a filterable change table. Classification/elevation coloring, point size, layer visibility, geometry edges, camera fit and a linked before/after divider support inspection. A separate 2D plan view is available. See the [review of 12 relevant tools and interface decisions](docs/interface-design.md).
 
 To compute the experiments yourself:
 
@@ -41,7 +41,7 @@ python -m pytest -q
 python -m scripts.validate_artifacts
 ```
 
-The first real-data run downloads a checksum-verified **74.4 MB LAZ**. `usd-core` enables binary USDC. Optional `python -m pip install mitsuba` enables Mitsuba scene-load validation; scalar mode is sufficient. The static viewer has no JavaScript framework or CDN dependency; optional web fonts fall back to local system fonts offline. The server binds to localhost.
+The first real-data run downloads a checksum-verified **74.4 MB LAZ**. `usd-core` enables binary USDC. Optional `python -m pip install mitsuba` enables Mitsuba scene-load validation; scalar mode is sufficient. The static viewer has no JavaScript framework or CDN dependency. Three.js and OrbitControls are vendored locally with their MIT notice; system fonts need no network request. WebGL is required for the 3D view, with a 2D fallback. The server binds to localhost.
 
 ## Measured results
 
@@ -130,7 +130,7 @@ The Mitsuba material is optical diffuse. **Sionna radio materials and path solvi
 
 ## Validation and engineering decisions
 
-The ten-test suite checks known-transform recovery, height-error recovery, retention of unobserved map geometry, true intersection-height visibility, missing-ground rejection, courtyard roof area and axis conversion, concave-mesh closure and outward winding, API parameter validation, tile-seam ownership, and street conflict flags. Constrained triangulation preserves concave roof and courtyard boundaries. Export validation separately reloads actual committed artifacts and verifies watertightness and consistent winding after merging coincident vertices. Browser validation exercises saved data, stage controls, building inspection, 3D, visibility links, a live reduced-density calculation, dataset switching and responsive layout. [Browser record](results/browser_validation.json).
+The ten-test suite checks known-transform recovery, height-error recovery, retention of unobserved map geometry, true intersection-height visibility, missing-ground rejection, courtyard roof area and axis conversion, concave-mesh closure and outward winding, API parameter validation, tile-seam ownership, and street conflict flags. Constrained triangulation preserves concave roof and courtyard boundaries. Export validation separately reloads actual committed artifacts and verifies watertightness and consistent winding after merging coincident vertices. Browser validation exercises saved data, stage controls, building inspection, WebGL orbit, color/point-size/layer controls, visibility links, a live reduced-density calculation, dataset switching and responsive layout. [Browser record](results/browser_validation.json). [Additional UI checks](results/ui_validation.json) cover table filtering and linked properties, local-only assets, 2D/3D switching and a simulated WebGL-unavailable fallback.
 
 There is no training phase or GPU requirement. A deterministic geometric baseline keeps data assumptions and failure causes inspectable before adding a learned model. Relevant learned reconstruction and robust-global-registration extensions are discussed in the [primary-source research review](docs/research.md).
 
